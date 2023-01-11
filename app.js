@@ -1,132 +1,152 @@
-const a = 34;
-const b = 2;
-let myName = "boa";
+// const a = 5;
+// const b = 2;
+// const myName = "claire";
 
-console.log(a + b);
-console.log(a * b);
-console.log(a / b);
+// console.log (a + b);
+// console.log (a * b);
+// console.log ("hello" + myName)
 
-console.log("hello " + myName); 
+// myName = "claire Kim";
+// console.log ("hello" + myName)
 
-myName = "nicolas";
+// const amIFat = null;
+// let something;
 
-console.log("your new name is" + myName);
+// const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat"]
 
-const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat"];
+// //Get item from array
+// console.log(daysOfWeek[5])
 
-// Get Item from Array
-console.log(daysOfWeek[4]);
+// //add one more day to the array
+// daysOfWeek.push("sun")
 
-// Before adding sunday
-console.log(daysOfWeek);
+// console.log(daysOfWeek)
 
-// Add one more day to the array
-daysOfWeek.push("sun");
+// const player = {
+//     name:"claire",
+//     points: 10,
+//     fat: true,
+// }
 
-//after adding sunday
-console.log(daysOfWeek);
+// console.log(player);
+// console.log(player.name);
+// console.log(player["name"]);
 
-//object 
-const player = {
-    name: "junyeob",
-    points: 10,
-    fat: true,
-};
-console.log(player);
-console.log(player.name);
-console.log(player["name"]);
+// player.fat = false
 
-console.log(player);
-player.fat = false;
-console.log(player);
+// function sayHello(nameOfPerson, age) {
+//     console.log("hello my name is " + nameOfPerson + "and I am " + age);
+// }
 
-console.log(player);
-player.lastName = "kim";
-console.log(player);
+// sayHello("claire", 20);
+// sayHello("junyeob", 30);
 
+// function plus(a, b) {
+//     console.log (a + b);
+// }
 
-//funtion 함수
-function sayHello() {
-    console.log("Hello!");
-}
+// plus(8, 60);
 
-sayHello();
-sayHello();
-sayHello();
+// const player = {
+//     name: "claire",
+//     sayHello: function (otherPersonsName) {
+//         console.log("hello " + otherPersonsName + " nice to meet you")
+//     },
+// }
 
-const player2 = {
-    name: "yoonjin",
-    sayHello: function (name) {
-        console.log("hello!" + name);
-    }
-}
-player2.sayHello("yoonjion");
+// player.sayHello("jun");
+// player.sayHello("dal");
 
+// const calculator = {
+//     plus: function (a , b) {
+//         return a + b;
+//     },
+//     minus: function (a, b) {
+//         return a - b;
+//     },
+//     times: function (a, b) {
+//         return a * b;
+//     },
+//     divide: function (a, b) {
+//         return a / b;
+//     },
+//     power: function (a, b) {
+//         return a **b;
+//     }
+// }
 
-const month = {
-    name: "May",
-    daysInMonth: 31,
-    daysInWeek: ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
-    indexOfFirstDate: 6,
-    getDayOfDate: function (date) {
-        namuzi = date % 7;
-        console.log(this.daysInWeek[(this.indexOfFirstDate + namuzi) % 7]);
-    }
-}
+// const PlusResult = calculator.plus (5, 10);
+// const MinusResult = calculator.minus (PlusResult, 4);
+// const TimesResult = calculator.times (MinusResult, 5);
+// const DivideResult = calculator.divide (TimesResult, MinusResult);
+// const PowerResult = calculator.power (DivideResult, 2)
 
-month.getDayOfDate(20);
+//여기서부트는 3.5 강의 까지 내용
+// const title = document.querySelector(".hello h1");
 
+// function handleTitleClick(){
+//     title.style.color = "blue";
+// }
 
-//Return
-const calculator = {
-    plus: function (a, b) {
-        return (a + b);
-    },
-    minus: function (a, b) {
-        return (a - b);
-    },
-    times: function (a, b) {
-        return (a * b);
-    },
-    divide: function (a, b) {
-        return (a / b);
-    },
-    power: function (a, b) {
-        return (a ** b);
-    },
-}
-// 리턴 받은걸 다음 연산에서 활용
-const plusResult = calculator.plus(2, 3);
-const minusResult = calculator.minus(plusResult, 10);
-const timesResult = calculator.times(10, minusResult);
+// function handleMouseEnter(){
+//     title.innerText = "Mouse is here";
+// }
 
-const age = 96;
-function calculateKrAge(ageOfForeigner) {
-    return ageOfForeigner + 2;
-}
+// function handleMouseLeave(){
+//     title.innerText = "Mouse is gone";
+// }
 
-const KrAge = calculateKrAge(age);
+// function handleWindowResize(){
+//     document.body.style.backgroundColor = "tomato";
+// }
 
-//Conditionals
-const age2 = parseInt(prompt("how old are you"));
-console.log(age2);
+// function handleWindowOffline(){
+//     alert("SOS no wifi");
+// }
 
-console.log(isNaN(age2));
+// function handleWindowOnline(){
+//     alert("Online!")
+// }
 
-if(isNaN(age2) || age2 < 0) {
-    console.log("Please write a positive number");
-}
-else if (age2 < 21){
-    console.log("You are too young");
-}
-else if(age2 >= 21 && age2 <= 60) {
-    console.log("you can drink");
-}
-else {
-    console.log("you can't drink");
-}
+// title.addEventListener("click", handleTitleClick);
+// title.addEventListener("mouseenter", handleMouseEnter);
+// title.addEventListener("mouseleave", handleMouseLeave);
 
-true && true === true
-true && false === false
-false && true === false
-false && false === false
+// window.addEventListener("resize", handleWindowResize);
+// window.addEventListener("offline", handleWindowOffline);
+// window.addEventListener("online", handleWindowOnline);
+
+//여기서부터 3.6 강의
+
+const h1 = document.querySelector(".hello h1");
+
+// function handleTitleClick(){
+//    if (h1.style.color === "blue") {
+//     h1.style.color = "tomato";
+//    } else {
+//     h1.style.color = "blue";
+//    }
+// }
+
+// function handleTitleClick(){
+//     const currentColor = h1.style.color;
+//     let newColor;
+//     if (currentColor === "blue") {
+//         newColor = "tomato";
+//     } else {
+//         newColor = "blue";
+//     }
+//     h1.style.color = newColor
+//  }
+
+// h1.addEventListener("click", handleTitleClick);
+
+//3.7 css in javascript 
+
+const h1 = document.querySelector(".hello h1");
+
+unction handleTitleClick(){
+    h1.className = "active";
+ }
+
+h1.addEventListener("click", handleTitleClick);
