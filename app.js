@@ -1,152 +1,32 @@
-// const a = 5;
-// const b = 2;
-// const myName = "claire";
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
 
-// console.log (a + b);
-// console.log (a * b);
-// console.log ("hello" + myName)
+// string 이 반복될때 변수를 만들어주면 좋을때 모두 대문자로 쓴다고 한다 
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
 
-// myName = "claire Kim";
-// console.log ("hello" + myName)
 
-// const amIFat = null;
-// let something;
+function OnLoginsubmit(event) {
+    event.preventDefault();
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    const username = loginInput.value;
+    localStorage.setItem(USERNAME_KEY, username);
+    // 윗줄은 로컬 스토리지에 유저네임이라는 밸류를 저장함
+    paintGreetings(username);
+}
 
-// const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat"]
+function paintGreetings (username) {
+    greeting.innerText = `Hello  ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+}
 
-// //Get item from array
-// console.log(daysOfWeek[5])
+const savedUsername = localStorage.getItem(USERNAME_KEY)
+// getItem은 로컬스토리지에서 저장된 밸류를 저장
 
-// //add one more day to the array
-// daysOfWeek.push("sun")
-
-// console.log(daysOfWeek)
-
-// const player = {
-//     name:"claire",
-//     points: 10,
-//     fat: true,
-// }
-
-// console.log(player);
-// console.log(player.name);
-// console.log(player["name"]);
-
-// player.fat = false
-
-// function sayHello(nameOfPerson, age) {
-//     console.log("hello my name is " + nameOfPerson + "and I am " + age);
-// }
-
-// sayHello("claire", 20);
-// sayHello("junyeob", 30);
-
-// function plus(a, b) {
-//     console.log (a + b);
-// }
-
-// plus(8, 60);
-
-// const player = {
-//     name: "claire",
-//     sayHello: function (otherPersonsName) {
-//         console.log("hello " + otherPersonsName + " nice to meet you")
-//     },
-// }
-
-// player.sayHello("jun");
-// player.sayHello("dal");
-
-// const calculator = {
-//     plus: function (a , b) {
-//         return a + b;
-//     },
-//     minus: function (a, b) {
-//         return a - b;
-//     },
-//     times: function (a, b) {
-//         return a * b;
-//     },
-//     divide: function (a, b) {
-//         return a / b;
-//     },
-//     power: function (a, b) {
-//         return a **b;
-//     }
-// }
-
-// const PlusResult = calculator.plus (5, 10);
-// const MinusResult = calculator.minus (PlusResult, 4);
-// const TimesResult = calculator.times (MinusResult, 5);
-// const DivideResult = calculator.divide (TimesResult, MinusResult);
-// const PowerResult = calculator.power (DivideResult, 2)
-
-//여기서부트는 3.5 강의 까지 내용
-// const title = document.querySelector(".hello h1");
-
-// function handleTitleClick(){
-//     title.style.color = "blue";
-// }
-
-// function handleMouseEnter(){
-//     title.innerText = "Mouse is here";
-// }
-
-// function handleMouseLeave(){
-//     title.innerText = "Mouse is gone";
-// }
-
-// function handleWindowResize(){
-//     document.body.style.backgroundColor = "tomato";
-// }
-
-// function handleWindowOffline(){
-//     alert("SOS no wifi");
-// }
-
-// function handleWindowOnline(){
-//     alert("Online!")
-// }
-
-// title.addEventListener("click", handleTitleClick);
-// title.addEventListener("mouseenter", handleMouseEnter);
-// title.addEventListener("mouseleave", handleMouseLeave);
-
-// window.addEventListener("resize", handleWindowResize);
-// window.addEventListener("offline", handleWindowOffline);
-// window.addEventListener("online", handleWindowOnline);
-
-//여기서부터 3.6 강의
-
-const h1 = document.querySelector(".hello h1");
-
-// function handleTitleClick(){
-//    if (h1.style.color === "blue") {
-//     h1.style.color = "tomato";
-//    } else {
-//     h1.style.color = "blue";
-//    }
-// }
-
-// function handleTitleClick(){
-//     const currentColor = h1.style.color;
-//     let newColor;
-//     if (currentColor === "blue") {
-//         newColor = "tomato";
-//     } else {
-//         newColor = "blue";
-//     }
-//     h1.style.color = newColor
-//  }
-
-// h1.addEventListener("click", handleTitleClick);
-
-//3.7 css in javascript 
-
-const h1 = document.querySelector(".hello h1");
-
-unction handleTitleClick(){
-    h1.className = "active";
- }
-
-h1.addEventListener("click", handleTitleClick);
+if (savedUsername === null) {
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit", OnLoginsubmit);
+} else  {
+    paintGreetings(savedUsername);
+}
